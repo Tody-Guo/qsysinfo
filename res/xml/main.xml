@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<Preference style="?android:preferenceInformationStyle"
+		android:key="sd_storage" android:title="@string/sd_storage" />
+
+	<Preference style="?android:preferenceInformationStyle"
+		android:key="app2sd_storage" android:title="@string/a2sd_storage" />
+
+	<Preference style="?android:preferenceInformationStyle"
+		android:key="internal_storage" android:title="@string/internal_storage" />
+
+	<Preference style="?android:preferenceInformationStyle"
+		android:key="system_storage" android:title="@string/system_storage" />
+
+	<Preference style="?android:preferenceInformationStyle"
+		android:key="cache_storage" android:title="@string/cache_storage" />
+
+	<Preference android:key="memory" android:title="@string/memory"></Preference>
+
+	<Preference android:key="processor" android:title="@string/processor"></Preference>
+
+	<Preference android:key="net_address" android:title="@string/net_address" />
+
+	<Preference android:key="battery_level" android:title="@string/battery_level"
+		android:summary="@string/retrieving" />
+
+	<Preference android:key="sensors" android:title="@string/sensors" />
+
+	<!-- Preference android:key="gps" android:title="@string/gps" / -->
+
+	<PreferenceCategory android:title="@string/actions">
+		<Preference android:key="refresh_status" android:title="@string/refresh" />
+		<Preference android:key="view_logs" android:title="@string/view_logs" />
+		<Preference android:key="send_report" android:title="@string/send_report" />
+		<Preference android:key="more_info" android:title="@string/more_info" />
+	</PreferenceCategory>
+
+</PreferenceScreen>

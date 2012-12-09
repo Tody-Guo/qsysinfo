@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="org.uguess.android.sysinfo" android:installLocation="auto"
+	android:versionCode="69" android:versionName="1.8.2">
+
+	<application android:icon="@drawable/icon" android:label="@string/app_name" android:hardwareAccelerated="true">
+		<activity android:name=".QSystemInfo" android:label="@string/app_name"
+			android:configChanges="keyboardHidden|orientation">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name=".SysInfoManager"
+			android:configChanges="keyboardHidden|orientation"></activity>
+		<activity android:configChanges="keyboardHidden|orientation"
+			android:name=".SysInfoManager$InfoSettings"></activity>
+		<activity android:configChanges="keyboardHidden|orientation"
+			android:name=".LogViewer"></activity>
+		<activity android:configChanges="keyboardHidden|orientation"
+			android:name=".LogViewer$LogSettings"></activity>
+		<activity android:name=".ApplicationManager"
+			android:configChanges="keyboardHidden|orientation"></activity>
+		<activity android:name=".ApplicationManager$AppSettings"
+			android:configChanges="keyboardHidden|orientation"></activity>
+		<activity android:name=".ProcessManager"
+			android:configChanges="keyboardHidden|orientation"></activity>
+		<activity android:name=".ProcessManager$ProcessSettings"
+			android:configChanges="keyboardHidden|orientation"></activity>
+		<activity android:name=".NetStateManager"
+			android:configChanges="keyboardHidden|orientation"></activity>
+		<activity android:name=".NetStateManager$NetStateSettings"
+			android:configChanges="keyboardHidden|orientation"></activity>
+		<activity android:configChanges="keyboardHidden|orientation"
+			android:name=".BatteryInfoActivity" android:theme="@android:style/Theme.Dialog"></activity>
+		<activity android:configChanges="keyboardHidden|orientation"
+			android:name=".SensorInfoActivity" android:theme="@android:style/Theme.Dialog"></activity>
+		<activity android:name=".CpuInfoActivity"
+			android:configChanges="keyboardHidden|orientation" android:theme="@android:style/Theme.Dialog"></activity>
+		<activity android:name=".MemInfoActivity"
+			android:configChanges="keyboardHidden|orientation" android:theme="@android:style/Theme.Dialog"></activity>
+		<activity android:name=".NetworkInfoActivity"
+			android:configChanges="keyboardHidden|orientation" android:theme="@android:style/Theme.Dialog"></activity>
+		<activity android:name=".RestoreAppActivity"
+			android:configChanges="keyboardHidden|orientation"></activity>
+		<activity android:name=".RestoreAppActivity$RestoreAppSettings"
+			android:configChanges="keyboardHidden|orientation"></activity>
+		<activity android:name=".QSystemInfo$ErrorReportActivity"
+			android:configChanges="keyboardHidden|orientation"></activity>
+		<receiver android:name=".WidgetProvider" android:label="@string/widget_bar_name">
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE"></action>
+			</intent-filter>
+			<meta-data android:resource="@xml/widget_bar_info"
+				android:name="android.appwidget.provider"></meta-data>
+		</receiver>
+		<receiver android:name=".WidgetProvider$TaskWidget"
+			android:icon="@drawable/end" android:label="@string/task_widget_name">
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE"></action>
+			</intent-filter>
+			<meta-data android:resource="@xml/widget_info"
+				android:name="android.appwidget.provider"></meta-data>
+		</receiver>
+		<receiver android:name=".WidgetProvider$InfoWidget">
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE"></action>
+			</intent-filter>
+			<meta-data android:resource="@xml/widget_info"
+				android:name="android.appwidget.provider"></meta-data>
+		</receiver>
+		<service android:name=".WidgetProvider$EndTaskService"></service>
+		<receiver android:name=".QSystemInfo$BootReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED"></action>
+			</intent-filter>
+		</receiver>
+	</application>
+
+    <uses-sdk android:minSdkVersion="3" />
+    
+    <uses-feature android:required="false" android:name="android.hardware.wifi"/>
+    <uses-feature android:required="false" android:name="android.hardware.touchscreen"/>
+	    	
+	<uses-permission android:name="android.permission.GET_PACKAGE_SIZE"></uses-permission>
+	<uses-permission android:name="android.permission.GET_TASKS"></uses-permission>
+	<uses-permission android:name="android.permission.RESTART_PACKAGES"></uses-permission>
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+	<uses-permission android:name="android.permission.READ_LOGS"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+
+	<supports-screens android:smallScreens="true"
+		android:largeScreens="true" android:normalScreens="true"
+		android:anyDensity="true" android:resizeable="true"
+		android:xlargeScreens="true"></supports-screens>
+
+</manifest> 
